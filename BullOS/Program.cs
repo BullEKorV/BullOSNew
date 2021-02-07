@@ -54,6 +54,10 @@ public class Program
                     DeleteAccount(input);
                 }
             }
+            else if (input == "game")
+            {
+                DrawGame.DrawGameInit(accounts[0].userID);
+            }
         }
     }
     static void CreateUsername()
@@ -234,6 +238,12 @@ public class Program
     {
         return new string(input.ToCharArray()
             .Where(c => !Char.IsWhiteSpace(c))
+            .ToArray());
+    }
+    public static string RemoveCharacters(string input)
+    {
+        return new string(input.ToCharArray()
+            .Where(c => !Char.IsLetter(c))
             .ToArray());
     }
     public static void LineChanger(string newText, string fileName, int lineToEdit)

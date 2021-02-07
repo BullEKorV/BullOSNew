@@ -18,10 +18,13 @@ public class Game31
         cardsLeft.AddRange(CreateAllCards());
         Raylib.SetTargetFPS(120);
         Raylib.InitWindow(1200, 800, "31");
+        bool gameActive = true;
+
         CreateButtons();
         ResetGame();
-        while (!Raylib.WindowShouldClose())
+        while (gameActive)
         {
+            Raylib.SetExitKey(0);
 
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.WHITE);
@@ -32,12 +35,11 @@ public class Game31
             }
             else if (Raylib.IsKeyPressed(KeyboardKey.KEY_Q))
             {
-                Raylib.CloseWindow();
+                gameActive = false;
             }
-            if (Raylib.IsKeyPressed(KeyboardKey.KEY_Q)) break;
             Raylib.EndDrawing();
-
         }
+        Raylib.CloseWindow();
     }
     static void Knock()
     {
