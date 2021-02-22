@@ -1,12 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 public class UserUI
 {
-    static string[] commands = { "help", "logout", "accounts", "text", "changepassword", "changeusername" };
-    static string[] games = { "31" };
+    static string[] commands = { "help", "logout", "accounts", "text", "changepassword", "changeusername", "game" };
+    static string[] games = { "31", "drawgame" };
     public static void StartScreen(int currentUser)
     {
         bool loggedIn = true;
@@ -82,6 +78,11 @@ public class UserUI
                 if (command.Contains("31"))
                 {
                     Game31.Game();
+                    Console.Clear();
+                }
+                else if (command.Contains("drawgame"))
+                {
+                    DrawGame.DrawGameInit(currentUser);
                     Console.Clear();
                 }
             }

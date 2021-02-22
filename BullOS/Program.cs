@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 public class UserInfo
 {
     public string username;
@@ -24,7 +22,6 @@ public class Program
     static string[] games = { "31" };
     static void Main(string[] args)
     {
-        //Console.WriteLine(Console.WindowWidth);
         try
         {
             System.IO.Directory.CreateDirectory(@"dataStorage");
@@ -53,10 +50,6 @@ public class Program
                 {
                     DeleteAccount(input);
                 }
-            }
-            else if (input == "game")
-            {
-                DrawGame.DrawGameInit(accounts[0].userID);
             }
         }
     }

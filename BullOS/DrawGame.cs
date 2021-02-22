@@ -338,7 +338,7 @@ public class DrawGame
             yP1 = Raylib.GetMouseY();
             yP2 = startingY - yP1;
         }
-        //check if overlapping with player
+        // check if overlapping with player
         bool isOverlapping = xP1 - x < p1.x + p1.width && xP1 - x + xP2 > p1.x && yP1 + yP2 > p1.y && !(yP1 > p1.y + p1.height);
         if (isOverlapping && gameState == State.Game)
         {
