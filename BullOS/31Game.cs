@@ -2,8 +2,6 @@ using System;
 using Raylib_cs;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-
 public class Game31
 {
     static List<string> cardsLeft = new List<string>();

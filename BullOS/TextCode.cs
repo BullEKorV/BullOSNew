@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 public class TextFile
 {
     public string name;
@@ -75,7 +73,7 @@ public class TextCode
         string name = Console.ReadLine();
         var textFileCheck = textFiles.Find(x => x.name.ToLower() == name.ToLower());
         Console.WriteLine(textFileCheck);
-        while (!name.Contains("ยง") && name.Length < 3 || name.Length > 20 || textFileCheck != null)
+        while (!name.Contains("§") && name.Length < 3 || name.Length > 20 || textFileCheck != null)
         {
             if (textFileCheck != null) Console.WriteLine("There's already a file with that name");
             else Console.WriteLine("Name must be longer than 3 and shorter than 20 characters");
@@ -83,7 +81,7 @@ public class TextCode
             name = Console.ReadLine();
             textFileCheck = textFiles.Find(x => x.name.ToLower() == name.ToLower());
         }
-        if (!name.Contains("ยง"))
+        if (!name.Contains("§"))
         {
             //add textfile and directory
             textFiles.Add(new TextFile(name, ""));
